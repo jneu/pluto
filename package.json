@@ -1,0 +1,13 @@
+{
+  "name": "pluto",
+  "version": "0.1.0",
+  "description": "keytab file vsce",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Joshua Neuheisel",
+  "devDependencies": {
+    "jest": "^27.0.1"
+  }
+}

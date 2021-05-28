@@ -1,0 +1,19 @@
+#
+# build directories
+#
+
+/coverage/
+/node_modules/
+
+#
+# keytab files
+#
+
+*.keytab
+
+#
+# temporarily ignore these
+#
+
+app.js
+package-lock.json
