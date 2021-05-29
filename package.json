@@ -1,13 +1,46 @@
 {
   "name": "pluto",
+  "displayName": "Pluto Keytab Viewer",
   "version": "0.1.0",
   "description": "keytab file vsce",
-  "main": "app.js",
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "keytab",
+    "kerberos",
+    "heimdal"
+  ],
+  "license": "MIT",
+  "author": "Joshua Neuheisel",
+  "main": "pluto",
+  "repository": {
+    "type": "git",
+    "url": "github:jneu/pluto"
+  },
   "scripts": {
     "test": "jest"
   },
-  "author": "Joshua Neuheisel",
   "devDependencies": {
     "jest": "^27.0.1"
+  },
+  "engines": {
+    "vscode": "^1.56.2"
+  },
+  "activationEvents": [
+    "onCustomEditor:pluto.keytab"
+  ],
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "pluto.keytab",
+        "displayName": "Keytab",
+        "selector": [
+          {
+            "filenamePattern": "*.keytab"
+          }
+        ]
+      }
+    ]
   }
 }
