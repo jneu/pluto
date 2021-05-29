@@ -13,7 +13,7 @@
   ],
   "license": "MIT",
   "author": "Joshua Neuheisel",
-  "main": "pluto",
+  "main": "src/pluto.js",
   "repository": {
     "type": "git",
     "url": "github:jneu/pluto"
@@ -44,10 +44,7 @@
     ]
   },
   "jest": {
-    "roots": [
-      "<rootDir>/lib",
-      "<rootDir>/test"
-    ],
+    "roots": [ "<rootDir>/lib" ],
     "moduleFileExtensions": [ "js" ],
     "testEnvironment": "node",
     "clearMocks": true,
