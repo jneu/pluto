@@ -1,19 +1,19 @@
 'use strict';
 
-const stream = require('stream');
-const util = require('util');
+const { pipeline, Readable, Writable } = require('stream');
+const { promisify } = require('util');
 const vscode = require('vscode');
 
-const HeaderExtractorTransform = require('../lib/HeaderExtractorTransform');
-const Record = require('../lib/Record');
-const RecordExtractorTransform = require('../lib/RecordExtractorTransform');
+const { HeaderExtractorTransform } = require('../lib/HeaderExtractorTransform');
+const { Record } = require('../lib/Record');
+const { RecordExtractorTransform } = require('../lib/RecordExtractorTransform');
 
 function assembleCustomDocument(uri) {
-    const pipeline = util.promisify(stream.pipeline);
+    const promisifiedPipeline = promisify(pipeline);
 
     return vscode.workspace.fs.readFile(uri)
         .then(value => {
-            const fileBytesSource = new stream.Readable({
+            const fileBytesSource = new Readable({
                 read(size) {
                     this.push(value);
                     this.push(null);
@@ -21,14 +21,14 @@ function assembleCustomDocument(uri) {
             });
 
             const recordCollection = [];
-            const recordCollector = new stream.Writable ({
+            const recordCollector = new Writable ({
                 writev: (chunks, callback) => {
                     chunks.forEach(x => { recordCollection.push(new Record(x.chunk)); });
                     callback();
                 }
             });
 
-            const recordPipeline = pipeline(
+            const recordPipeline = promisifiedPipeline(
                 fileBytesSource,
                 new HeaderExtractorTransform(),
                 new RecordExtractorTransform(),
