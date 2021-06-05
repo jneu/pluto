@@ -15,10 +15,17 @@ class PlutoEditorProvider {
           <meta charset="UTF-8">
           <title>Pluto</title>
           <style>
-            table { text-align: center; }
+            table {
+              text-align: center;
+              width: 100%;
+            }
           </style>
         </head>
         <body>
+          <p>
+            There ${(records.length === 1) ? 'is 1 record' : ('are ' + records.length + ' records')}
+            in this kerberos keytab file.
+          </p>
           <table>
             <thead>
               <tr>
