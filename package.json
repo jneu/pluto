@@ -1,7 +1,7 @@
 {
   "name": "pluto",
   "displayName": "Pluto Keytab Viewer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "keytab file vsce",
   "categories": [
     "Other"
@@ -22,7 +22,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "jest": "^27.0.3"
+    "jest": "^27.0.4"
   },
   "engines": {
     "vscode": "^1.56.2"
