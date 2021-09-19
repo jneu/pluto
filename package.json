@@ -57,7 +57,7 @@
     "coverageDirectory": "coverage",
     "coverageProvider": "v8"
   },
-  "dependencies": {
+  "devDependencies": {
     "jest": "^27.2.0"
   }
 }
