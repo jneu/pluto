@@ -1,8 +1,9 @@
 {
   "name": "pluto",
+  "publisher": "someone",
   "displayName": "Pluto Keytab Viewer",
   "version": "0.1.2",
-  "description": "keytab file vsce",
+  "description": "Viewer for Kerberos keytab files.",
   "categories": [
     "Other"
   ],
@@ -20,9 +21,6 @@
   },
   "scripts": {
     "test": "jest"
-  },
-  "devDependencies": {
-    "jest": "^27.0.4"
   },
   "engines": {
     "vscode": "^1.56.2"
@@ -58,5 +56,8 @@
     ],
     "coverageDirectory": "coverage",
     "coverageProvider": "v8"
+  },
+  "dependencies": {
+    "jest": "^27.2.0"
   }
 }
