@@ -1,6 +1,6 @@
 {
   "name": "pluto",
-  "publisher": "someone",
+  "publisher": "joshua-neuheisel",
   "displayName": "Pluto Keytab Viewer",
   "version": "0.1.2",
   "description": "Viewer for Kerberos keytab files.",
